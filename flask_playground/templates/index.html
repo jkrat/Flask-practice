@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask Playground</title>
+    <style>
+.wrapper {
+    width: 970px;
+    min-height: 800px;
+    margin: 0px auto;
+    padding: 40px 5px;
+    background-color : lightcoral;
+}
+h1 {
+    width: 200px;
+    text-align: center;
+    margin: 20px auto;
+}
+.flex_container {
+    min-height: 600px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 10px 20px;
+    border: 1px solid black;
+    background-color: skyblue;
+}
+#color {
+    background-color: {{color}};
+}
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Welcome!</h1>
+        <div class="flex_container">
+            {% for x in range(0, times): %}
+            <div class="box" id="color"></div>
+            {% endfor %}
+        </div>  
+    </div>
+    
+</body>
+</html>

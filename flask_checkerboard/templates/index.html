@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>checkerboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrapper {
+            width: 900px;
+            min-height: 900px;
+            margin: 2px auto;
+            margin-top: 50px;
+        }
+        td {
+            width: 80px;
+            height: 80px;
+            margin: 0px 0px;
+            border: 1px solid rgb(51, 34, 143);
+        }
+        .a {
+            background-color: rgb({{colors[0]}}, {{colors[1]}} , {{colors[2]}});
+        }
+        .b {
+            background-color: rgb({{colors2[0]}}, {{colors2[1]}} , {{colors2[2]}});
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <table>
+            {% for i in range(0, x): %}
+            <tr>
+                {% for j in range(0, y): %}
+                {% if (i+j) % 2 == 0: %}
+                <td class="a"></td>
+                {% else %}
+                <td class="b"></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>
+
+
+

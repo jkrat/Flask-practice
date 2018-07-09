@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Great Numbers Game</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <style>
+      .stack {
+        display: block;
+        margin: 20px auto;
+      }
+      input.stack {
+        border: 1px solid gray;
+      }
+      .box {
+        height: 250px;
+        width: 250px;
+        border: 1px solid black;
+        margin: 20px auto;
+        padding: 90px 0px;
+        color: white;
+      }
+      .green {
+        background-color : green;
+      }
+      .red {
+        background-color : red;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Welcome to the Great Number Game!</h1>
+          <h4 class="lead text-muted">I am thinking of a number between 1 and 100</h4>
+          <h4 class="lead text-muted">Take a guess</h4>
+          <div class="box {{box_class}}">
+              <h2>{{ user_feedback }}</h2>
+          </div>
+          <form action="/guess" method="POST">
+            <input type="text" class="stack" name="guess">
+            <button type="submit" class="btn btn-outline-danger stack {{ submit_class }}">Submit</button>
+          </form>
+          <a href="/reset" class="btn btn-outline-success {{ button_class }}">Reset</a>
+        </div>
+      </section> 
+  
+      </main>
+      
+</body>
+</html>   
+
+<!-- class="form-control" -->

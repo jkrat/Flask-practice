@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 app = Flask(__name__)  
 app.secret_key = 'dortmund'
-app.count = 0
+
 
 @app.route('/')           
 def index():
@@ -18,7 +18,7 @@ def by_two():
 
 @app.route('/reset')
 def reset():
-    session['count'] = 0
+    session.pop('count')  #OR session['count] = 0 OR session.clear() 
     return redirect('/')
 
 

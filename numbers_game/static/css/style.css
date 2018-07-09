@@ -1,0 +1,24 @@
+.stack {
+    display: block;
+    margin: 20px auto;
+}
+input.stack {
+    border: 1px solid gray;
+}
+.box {
+    height: 250px;
+    width: 250px;
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 90px 0px;
+    color: black;
+}
+.red {
+    background-color : green;
+}
+.green {
+    background-color : red;
+}
+.hidden {
+    visibility: hidden;
+}

@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Dojo Fruit Store Assignment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Counter</h1>
+          <h4 class="lead text-muted">{{ session['count'] }} times</h4>
+          <p>
+            <a href="/increment" class="btn btn-primary my-2">Add two visits!</a>
+            <a href="/reset" class="btn btn-secondary my-2">Reset</a>
+          </p>
+        </div>
+      </section>
+  
+      </main>
+      
+</body>
+</html>   

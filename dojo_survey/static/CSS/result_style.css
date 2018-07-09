@@ -14,7 +14,6 @@
 }
 #header {
     margin-left: 40px;
-    color: red;
     font-size: 27px;
     font-weight: bold;
     text-decoration: underline;
@@ -25,7 +24,6 @@ ul {
     margin: 0px 0px 150px 0px;
 }
 li { 
-    color: red;
     margin: 10px 0px; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
 }
@@ -47,11 +45,9 @@ li .inline{
     display: inline-block;
     width: 48%;
 }
-
 select:hover {
     cursor: pointer;
 }
-
 button {
     padding: 8px 20px;
     border: 1px solid black;

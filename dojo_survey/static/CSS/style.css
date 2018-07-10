@@ -7,6 +7,10 @@
     margin: 0px auto;
     padding: 110px 80px;
 }
+.flash {
+    color: red;
+    font-size: 16px;
+}
 #main {
     padding: 30px;
     overflow: auto;
@@ -57,6 +61,4 @@ button {
 }
 button:hover {
     background-color: rgb(42, 75, 80);
-    
-
 }

@@ -11,6 +11,13 @@
         width: 90px;
         font-size: 18px;
       }
+      #reset {
+        background-color: #f0f041;
+        float: right;
+        margin-right: 15px;
+        border: 1px solid slategray;
+        color: black;
+      }
       #totalgold {
         border: 1px solid slategray;
         font-size: 20px;
@@ -24,7 +31,7 @@
         border: 1px solid slategray;
         height: 200px; 
         padding: 20px 10px;
-        background-color: lightgoldenrodyellow;
+        background-color: #f0f041;
         border-radius: 3px;
       }
       .col-sm p, .col-sm h5{
@@ -40,15 +47,15 @@
       }
       .activities {
         width: 95%;
-        min-height: 200px;
+        height: 250px;
         border: 1px solid slategray;
         background-color: rgb(174, 235, 174);
         border-radius: 3px;
+        overflow: auto;
       }
       li {
       list-style: none;
       }
-
       .lost {
       color: red;
       }
@@ -59,15 +66,16 @@
 </head>
 <body>
   <div class="wrapper bg-light">
-    <p class="inline ml-5">Your Gold:</p>
-    <p id="totalgold">0</p>
+    <p class="inline ml-2">Your Gold:</p>
+    <p id="totalgold">{{ gold }}</p>
+    <a href="/reset" class="btn inline" id="reset">Reset</a>
     <div class="container my-3">
       <div class="row">
         <div class="col-sm mx-2">
           <h5>Farm</h5>
           <p>(earns 10-20 golds)</p>
           <form action="/process_money" method="POST">
-            <input type="hidden" name="poperty" value="Farm">
+            <input type="hidden" name="property" value="Farm">
             <input type="Submit" class="btn btn-outline-success" value="Find Gold!">
           </form>
         </div>
@@ -75,7 +83,7 @@
           <h5>Cave</h5>
           <p>(earns 5-10 golds)</p>
           <form action="/process_money" method="POST">
-            <input type="hidden" name="poperty" value="Cave">
+            <input type="hidden" name="property" value="Cave">
             <input type="submit" class="btn btn-outline-success" value="Find Gold!">
           </form>
         </div>
@@ -83,7 +91,7 @@
           <h5>House</h5>
           <p>(earns 2-5 golds)</p>
           <form action="/process_money" method="POST">
-            <input type="hidden" name="poperty" value="House">
+            <input type="hidden" name="property" value="House">
             <input type="submit" class="btn btn-outline-success" value="Find Gold!">
           </form>
         </div>
@@ -91,7 +99,7 @@
           <h5>Casino</h5>
           <p>(earns/takes 0-50 golds)</p>
           <form action="/process_money" method="POST">
-            <input type="hidden" name="poperty" value="Casino">
+            <input type="hidden" name="property" value="Casino">
             <input type="submit" class="btn btn-outline-success" value="Find Gold!">
           </form>
         </div>
@@ -99,9 +107,30 @@
     </div>
     <div class="ml-5 mt-4">
       <p>Activities:</p>
-      <p class="activities"></p>
+      <div class="activities">
+          {% if activity_list %}
+          <ul>
+            {% for activity in activity_list %}
+            <li class={{ activity[0] }}>{{ activity[1] }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+      </div>
     </div> 
   </div> 
 </body>
 </html>   
+
+<!-- OR...
+
+<div class="activities">
+    {% if activity_list %}
+    <ul>
+      {% for class, activity in activity_list %}
+      <li class={{class}}>{{activity}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+</div> -->
 
